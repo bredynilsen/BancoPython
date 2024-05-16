@@ -1,12 +1,12 @@
-menu = """
-
-[d] Depositar
-[s] Sacar
-[e] Extrato
-[q] Sair
+menu = """==========================
+| DIGITE A OPÇAO DESEJADA:
+| [d] Depositar
+| [s] Sacar
+| [e] Extrato
+| [q] Sair
 
 => """
-
+            
 saldo = 0
 limite = 500
 extrato = ""
