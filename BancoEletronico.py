@@ -20,10 +20,8 @@ numero_saques = 0
 LIMITE_SAQUES = 3
 
 
-def deposito():
-    global valor, extrato, saldo
-    valor = float(input("Informe o valor do depósito: "))
-
+def deposito(saldo, valor, extrato):
+   
     if valor > 0:
         saldo += valor
         extrato += f"⬆ Depósito: R$ {valor:.2f}\n"
@@ -69,10 +67,12 @@ def exibir_extrato():
 
 while True:
 
-    opcao = input(menu)
+    opcao = menu() 
 
     if opcao == "d":
-        deposito()
+        valor = float(input("Informe o valor do depósito: "))
+        saldo, extrato = deposito(saldo, valor, extrato)
+        
     elif opcao == "s":
         saque()
 
@@ -85,7 +85,7 @@ while True:
     else:
         print("Operação inválida, por favor selecione novamente a operação desejada.")
         
-menu()
+
 '''
 Novas funcões:
 listar contas
@@ -107,5 +107,6 @@ nro conta: seqeuncuai comecado em 1
 agencia = 0001
 pode haver varias contas por usuario
 
-para vincular usuario a conta, filtre a lista de usuarios buscando o nuero do CPF informado para cada usuario da lista'''
+para vincular usuario a conta, filtre a lista de usuarios buscando o nuero do CPF informado para cada usuario da lista
+'''
 
