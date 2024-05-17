@@ -1,17 +1,24 @@
-menu = """==========================================
+import textwrap
+def menu():
+    menu = """==========================================
 | DIGITE A OPÇAO DESEJADA:
+| [u] Criar Usuário
+| [c] Abrir Conta Corrente
+| [l] Listar
 | [d] Depositar
 | [s] Sacar
 | [e] Extrato
 | [q] Sair
 ==========================================
 => """
-            
+    return input(textwrap.dedent(menu))            
+
 saldo = 0
 limite = 500
 extrato = ""
 numero_saques = 0
 LIMITE_SAQUES = 3
+
 
 def deposito():
     global valor, extrato, saldo
@@ -77,3 +84,28 @@ while True:
 
     else:
         print("Operação inválida, por favor selecione novamente a operação desejada.")
+        
+menu()
+'''
+Novas funcões:
+listar contas
+listar usuários
+Listar numero de contas
+
+
+criar usuário:
+armazenar usuarios em lista>> 
+armazennar CHAVE-
+usuario: nome, nascimento, cpf, endereço
+endereço : string: logradouro, nro, bairro, cidade/sigla estado.
+armazenar somente cpf
+não pode existir 2 usuarios com mesmo cpf
+
+armazenar contas em lista>>
+conta: agencia, nro da conta e usuario
+nro conta: seqeuncuai comecado em 1
+agencia = 0001
+pode haver varias contas por usuario
+
+para vincular usuario a conta, filtre a lista de usuarios buscando o nuero do CPF informado para cada usuario da lista'''
+
