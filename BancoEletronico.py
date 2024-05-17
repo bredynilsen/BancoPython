@@ -54,7 +54,7 @@ def saque(*, saldo, valor, extrato, limite, numero_saques, LIMITE_SAQUES):
         print("╳ Operação falhou! O valor informado é inválido. ╳ ")
     return saldo, extrato
 
-def exibir_extrato():
+def exibir_extrato(saldo, /, *, extrato):
     print("\n================ EXTRATO ================")
     print("Não foram realizadas movimentações." if not extrato else extrato)
     print(f"\nSaldo: R$ {saldo:.2f}")
@@ -81,7 +81,7 @@ def main():
             saldo, extrato = saque(saldo=saldo, valor=valor, extrato=extrato, limite=limite, numero_saques=numero_saques, LIMITE_SAQUES=LIMITE_SAQUES)
             
         elif opcao == "e":
-            exibir_extrato()
+            exibir_extrato(saldo, extrato=extrato)
 
         elif opcao == "q":
             break
