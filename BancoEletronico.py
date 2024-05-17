@@ -52,7 +52,7 @@ def saque(*, saldo, valor, extrato, limite, numero_saques, LIMITE_SAQUES):
         print(f"Saque no valor de {valor:.2f} realizado com SUCESSO.")
     else:
         print("╳ Operação falhou! O valor informado é inválido. ╳ ")
-    return saldo, extrato
+    return saldo, extrato, numero_saques
 
 def exibir_extrato(saldo, /, *, extrato):
     print("\n================ EXTRATO ================")
@@ -78,7 +78,7 @@ def main():
             
         elif opcao == "s":
             valor = float(input("Informe o valor do saque: "))
-            saldo, extrato = saque(saldo=saldo, valor=valor, extrato=extrato, limite=limite, numero_saques=numero_saques, LIMITE_SAQUES=LIMITE_SAQUES)
+            saldo, extrato, numero_saques = saque(saldo=saldo, valor=valor, extrato=extrato, limite=limite, numero_saques=numero_saques, LIMITE_SAQUES=LIMITE_SAQUES)
             
         elif opcao == "e":
             exibir_extrato(saldo, extrato=extrato)
@@ -89,6 +89,8 @@ def main():
         else:
             print("╳ Operação inválida, por favor selecione novamente a operação desejada. ╳ ")
         
+if __name__ == "__main__":
+    main()
 '''
 Novas funcões:
 listar contas
